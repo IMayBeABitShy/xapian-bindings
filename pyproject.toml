@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name        = "xapian-bindings"
+description = "Meta-package to build and install xapian-bindings extension."
+requires-python = ">=3.4"
+authors = [
+  { name="Chris Church", email="chris@ninemoremminutes.com" },
+]
+license = "BSD-3-Clause"  # TODO: check this, the setup.py merely specified "BSD" but text looks like BSD-3
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["xapian", "bindings", "haystack"]
+dynamic = ["version", "readme"]
+
+[project.urls]
+"Homepage" = "https://github.com/ninemoreminutes/xapian-bindings/"
+"Documentation" = "https://github.com/ninemoreminutes/xapian-bindings/"
+"Source" = "https://github.com/ninemoreminutes/xapian-bindings/"
+"Tracker" = "https://github.com/ninemoreminutes/xapian-bindings/issues"
+
+[tool.setuptools]
+py-modules = ["_custom_build"]
+
+[tool.setuptools.dynamic]
+version = {attr="xapian.bindings.__version__"}
+readme = {file = ["README.rst"], content-type = "text/x-rst"}
+
+# [tool.setuptools.cmdclass]
+# build_py = "_custom_build.build_py"

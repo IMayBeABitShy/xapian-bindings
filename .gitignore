@@ -5,3 +5,4 @@ dist
 .tox
 __pycache__
 *.pyc
+.eggs/
